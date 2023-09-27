@@ -19,4 +19,6 @@ export default {
   <FooterComponent />
 </template>
 
-<style scoped></style>
+<style lang="scss">
+@import "./assets/scss/main.scss";
+</style>

@@ -1,24 +1,25 @@
 <script>
+import ProjectCard from './ProjectCard.vue';
+
+
 export default {
     name: 'MainComponent',
     data() {
         return {
-            title: 'Main Component'
+            title: 'Main Component',
+            projects: []
         }
+    },
+    components: {
+        ProjectCard
     }
 }
 </script>
 
 <template>
-    <header>
-        <h2>
-            {{ title }}
-        </h2>
-    </header>
+    <main>
+        <ProjectCard />
+    </main>
 </template>
 
-<style scoped>
-h2 {
-    color: blue;
-}
-</style>
+<style scoped></style>
