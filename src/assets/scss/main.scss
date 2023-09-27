@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 10px 30px;
+    display: flex;
+    flex-wrap: wrap;
+
+    .card {
+        width: calc(100% / 3 - 20px);
+        margin: 10px;
+        border: 1px solid black;
+
+        .card-title {
+            border-bottom: 1px solid black;
+        }
+
+        .card-body * {
+            padding: 2px 0;
+        }
+    }
+}
