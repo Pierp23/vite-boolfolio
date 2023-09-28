@@ -10,9 +10,19 @@ export default {
 </script>
 
 <template>
-    <header>
+    <footer>
+        <div>
+            Developerd with &hearts; by DeveloPier
+        </div>
 
-    </header>
+    </footer>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+footer {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>

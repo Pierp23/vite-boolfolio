@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             title: 'Project Card',
-            projects: []
+            projects: null
         }
     },
     created() {
@@ -19,48 +19,54 @@ export default {
     }
 }
 </script>
-
 <template>
-    <header>
-        <div>
-            <h1>
-                I progetti del 2023
-            </h1>
-        </div>
-    </header>
-    <main>
-        <section>
-            <div class="container">
-                <div class="card" v-for="project in projects" :key="project.id">
-                    <div class="card-title">
-                        <h3>
-                            {{ project.title }}
-                        </h3>
-                    </div>
-                    <div class="card-body">
-                        <div>
-                            <strong>Tipo: </strong>
-                            {{ project.type.type }}
+    <template v-if="projects">
+        <header>
+            <div>
+                <h1>
+                    I progetti del 2023
+                </h1>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="container">
+                    <div class="card" v-for="project in projects" :key="project.id">
+                        <div class="card-title">
+                            <h3>
+                                {{ project.title }}
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <strong>Tipo: </strong>
+                                {{ project.type.type }}
+                            </div>
+                            <div>
+                                <strong>Tecnlogie: </strong>
+                                <span v-for="technology in project.technologies" :key="technology.id">
+                                    - {{ technology.title }}
+                                </span>
+                            </div>
+                            <div>
+                                <strong>Descrizione: </strong>
+                                {{ project.description }}
+                            </div>
+                            <div>
+                                <strong>Data: </strong>
+                                {{ project.date }}
+                            </div>
                         </div>
                         <div>
-                            <strong>Tecnlogie: </strong>
-                            <span v-for="technology in project.technologies" :key="technology.id">
-                                - {{ technology.title }}
-                            </span>
-                        </div>
-                        <div>
-                            <strong>Descrizione: </strong>
-                            {{ project.description }}
-                        </div>
-                        <div>
-                            <strong>Data: </strong>
-                            {{ project.date }}
+                            <router-link :to="{ name: 'portfolio-project', params: { id: project.id } }">
+                                Approfondisci
+                            </router-link>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </template>
 </template>
 
 <style scoped></style>

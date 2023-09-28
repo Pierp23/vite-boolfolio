@@ -18,8 +18,23 @@ export default {
 
 <template>
     <main>
-        <ProjectCard />
+        <div>
+            <router-view></router-view>
+        </div>
+
     </main>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+main {
+
+    height: calc(100vh - 100px);
+
+    .container {
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+}
+</style>
