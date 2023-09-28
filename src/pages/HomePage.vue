@@ -9,11 +9,25 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="title-container">
         <h1>
             {{ title }}
         </h1>
     </div>
+
+    <div class="container">
+        <div class="benvenuto">
+            Benvenuto nel mondo di Pier, il developer <strong>senza gusto estetico!</strong>
+        </div>
+    </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.title-container {
+    margin: 10px 30px;
+}
+
+.benvenuto {
+    font-size: 20px;
+}
+</style>

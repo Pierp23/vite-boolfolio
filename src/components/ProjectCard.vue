@@ -20,6 +20,11 @@ export default {
 }
 </script>
 <template>
+    <template v-if="!projects">
+        <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" width="1200" height="480" frameBorder="0"
+            class="giphy-embed" allowFullScreen></iframe>
+    </template>
+
     <template v-if="projects">
         <header>
             <div>

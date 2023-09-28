@@ -1,6 +1,5 @@
 <script>
 import ProjectCard from '../components/ProjectCard.vue';
-import SingleProject from '../pages/SingleProject.vue';
 
 export default {
     data() {
