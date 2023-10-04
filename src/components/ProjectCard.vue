@@ -21,8 +21,10 @@ export default {
 </script>
 <template>
     <template v-if="!projects">
-        <iframe src="https://giphy.com/embed/3oEjI6SIIHBdRxXI40" width="1200" height="480" frameBorder="0"
-            class="giphy-embed" allowFullScreen></iframe>
+        <span id="loading">
+            <div class="lds-dual-ring"></div>
+        </span>
+
     </template>
 
     <template v-if="projects">
@@ -74,4 +76,43 @@ export default {
     </template>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+    position: relative;
+}
+
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%)
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid black;
+    border-color: black transparent black transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style>
